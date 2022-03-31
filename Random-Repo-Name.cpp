@@ -2,13 +2,14 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <cstring>
 #pragma warning(disable : 4996)
 using namespace std;
 
 int main() {
     //Welcome 
     cout << "Welcome to Random Repo Name generator:" << endl;
-    cout << "This program will generate you a random two-words name for you repository on GitHub!" << endl << endl;
+    cout << "This program will generate a random two-word name for your repository on GitHub!" << endl << endl;
 
     //Open pointer to word list file
     FILE* wordlist;
@@ -44,8 +45,26 @@ int main() {
         fgets(word_2, 20, wordlist);
     }
 
+    //Remove endlines from words
+    for (int i = 0; i < strlen(word_1); i++) {
+        if(word_1[i] == '\n') {
+            word_1[i] = '\0';
+        }
+    }
+
+    //Concatenate the two words
+    char repo_name[50];
+    strcpy(repo_name, word_1);
+    strcat(repo_name, " ");
+    strcat(repo_name, word_2);
+
+    //Make words lowercase
+    for (int i = 0; i < strlen(repo_name); i++) {
+        repo_name[i] = tolower(repo_name[i]);
+    }
+
     //Print the result
-    cout << "Here's your random name: " << endl << word_1 << word_2 << endl << endl;
+    cout << "Here's your random name: " << repo_name << endl;
     do {
         cout << "Press a key to close the program..." << endl;
     } while (cin.get() != '\n');
