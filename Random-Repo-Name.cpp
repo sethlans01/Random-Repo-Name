@@ -8,7 +8,7 @@ using namespace std;
 int main() {
     //Welcome 
     cout << "Welcome to Random Repo Name generator:" << endl;
-    cout << "This program will generate you a random two-words name for you repository on GitHub!" << endl << endl;
+    cout << "This program will generate a random two-word name for your repository on GitHub!" << endl << endl;
 
     //Open pointer to word list file
     FILE* wordlist;
@@ -43,7 +43,7 @@ int main() {
     for (int j = 0; j < word_2_number; j++) {
         fgets(word_2, 20, wordlist);
     }
-
+    
     //Print the result
     cout << "Here's your random name: " << endl << word_1 << word_2 << endl << endl;
     do {
