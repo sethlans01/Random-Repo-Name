@@ -2,7 +2,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include <cstring>
 #pragma warning(disable : 4996)
 using namespace std;
 
