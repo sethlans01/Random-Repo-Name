@@ -44,27 +44,9 @@ int main() {
     for (int j = 0; j < word_2_number; j++) {
         fgets(word_2, 20, wordlist);
     }
-
-    //Remove endlines from words
-    for (int i = 0; i < strlen(word_1); i++) {
-        if(word_1[i] == '\n') {
-            word_1[i] = '\0';
-        }
-    }
-
-    //Concatenate the two words
-    char repo_name[50];
-    strcpy(repo_name, word_1);
-    strcat(repo_name, " ");
-    strcat(repo_name, word_2);
-
-    //Make words lowercase
-    for (int i = 0; i < strlen(repo_name); i++) {
-        repo_name[i] = tolower(repo_name[i]);
-    }
-
+    
     //Print the result
-    cout << "Here's your random name: " << repo_name << endl;
+    cout << "Here's your random name: " << endl << word_1 << word_2 << endl << endl;
     do {
         cout << "Press a key to close the program..." << endl;
     } while (cin.get() != '\n');
